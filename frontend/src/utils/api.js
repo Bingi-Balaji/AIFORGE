@@ -8,7 +8,9 @@ export async function apiFetch(url, options = {}) {
       return targetUrl;
     }
     if (envBase) {
-      return `${envBase}${targetUrl}`;
+      const base = envBase.replace(/\/+$/, '');
+      const path = targetUrl.startsWith('/') ? targetUrl : `/${targetUrl}`;
+      return `${base}${path}`;
     }
     return targetUrl;
   };

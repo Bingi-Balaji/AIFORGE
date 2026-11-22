@@ -1,8 +1,8 @@
-// AutoLearn AI - Adaptive Learning & Mastery Engine
+// AIFORGE - Adaptive Learning & Mastery Engine
 // Provides continuous closed-loop adaptive analytics, mistake pattern detection,
 // spaced-repetition scheduling (SM-2 algorithm), and personalized study planning.
 
-const STORAGE_KEY = 'autolearn_learner_profile_v2';
+const STORAGE_KEY = 'aiforge_learner_profile_v2';
 
 const DEFAULT_PROFILE = {
   user_id: 'default_student',

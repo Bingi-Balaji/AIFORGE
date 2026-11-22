@@ -57,7 +57,7 @@ export default function WeakAreasPage() {
             <Target className="text-rose-400" /> Weak Areas & Mistake Pattern Analyzer
           </h1>
           <p className="text-slate-400 text-sm mt-1 max-w-2xl">
-            AutoLearn continuously monitors your assessment scores, quiz submissions, and concept accuracy to identify specific weaknesses and deliver targeted remedial drills.
+            AIFORGE continuously monitors your assessment scores, quiz submissions, and concept accuracy to identify specific weaknesses and deliver targeted remedial drills.
           </p>
         </div>
 

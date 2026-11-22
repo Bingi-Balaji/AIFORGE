@@ -175,7 +175,7 @@ export default function TutorPage() {
             <Sparkles size={22} className="text-cyan-400" />
             <h1 className="font-display font-bold text-2xl text-white">Exact AI Tutor & Voice Chatbot</h1>
             <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 flex items-center gap-1">
-              <Brain size={12} /> AutoLearn Expert Engine
+              <Brain size={12} /> AIFORGE Expert Engine
             </span>
           </div>
           <p className="text-slate-400 text-sm">Ask any question by voice or text. Provides exact, comprehensive AI/ML explanations, math formulas, and runnable code.</p>
@@ -337,7 +337,7 @@ export default function TutorPage() {
             <div className="text-xs text-slate-500 mb-2 uppercase font-mono">Tutor Engine Mode</div>
             <div className="flex items-center gap-2 text-white font-medium">
               <Brain size={16} className="text-cyan-400" />
-              {meta?.mode ? meta.mode.toUpperCase() : 'AUTOLEARN EXPERT ENGINE'}
+              {meta?.mode ? meta.mode.toUpperCase() : 'AIFORGE EXPERT ENGINE'}
             </div>
             {meta?.topic && (
               <div className="text-xs text-slate-400 mt-2">

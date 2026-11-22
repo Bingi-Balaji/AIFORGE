@@ -1,4 +1,4 @@
-# AutoLearn React Frontend — Integration Guide
+# AIFORGE React Frontend — Integration Guide
 
 ## Project Structure
 

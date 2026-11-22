@@ -7,7 +7,7 @@ import {
 } from '../utils/mockData';
 import { apiFetch } from '../utils/api';
 
-const STORAGE_KEY = 'autolearn_context_v2';
+const STORAGE_KEY = 'aiforge_context_v2';
 
 const fallbackState = {
   assessment: mockAssessment,
@@ -19,7 +19,7 @@ const fallbackState = {
   quizItems: [],
   modernFeatures: mockModernFeatures || [],
   modelName: 'Gradient Boosting Classifier',
-  automlEngine: 'AutoLearn Ensemble Engine',
+  automlEngine: 'AIFORGE Ensemble Engine',
   youtubeLive: true,
   notifications: [
     { type: 'info', title: 'Plan ready', message: '8 syllabus topics mapped into your personalized study plan.' },

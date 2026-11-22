@@ -51,11 +51,39 @@ app = Flask(
     __name__,
     static_folder=str(FRONTEND_BUILD_DIR / "static") if (FRONTEND_BUILD_DIR / "static").exists() else "static"
 )
-app.secret_key = os.environ.get("SECRET_KEY", "autolearn-fullstack-secret")
+app.secret_key = os.environ.get("SECRET_KEY", "aiforge-fullstack-secret")
+
+# Cross-Site Cookie and CORS configuration for Vercel <-> Render
+is_production = os.environ.get("FLASK_ENV") == "production" or os.environ.get("RENDER") is not None
+if is_production:
+    app.config.update(
+        SESSION_COOKIE_SECURE=True,
+        SESSION_COOKIE_SAMESITE="None",
+        SESSION_COOKIE_HTTPONLY=True,
+    )
 
 try:
+    import re
     from flask_cors import CORS
-    CORS(app, supports_credentials=True, origins=["http://localhost:3000", "http://127.0.0.1:3000", "http://localhost:5000", "http://127.0.0.1:5000"])
+    allowed_origins = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:5000",
+        "http://127.0.0.1:5000",
+    ]
+    frontend_url = os.environ.get("FRONTEND_URL", "").strip()
+    if frontend_url:
+        allowed_origins.append(frontend_url)
+        allowed_origins.append(frontend_url.rstrip("/"))
+
+    cors_origins = [re.compile(r"^https:\/\/.*\.vercel\.app$")] + allowed_origins
+    CORS(
+        app,
+        supports_credentials=True,
+        origins=cors_origins,
+        allow_headers=["Content-Type", "Authorization", "X-Requested-With"],
+        methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    )
 except Exception:
     pass
 
@@ -673,7 +701,7 @@ def handle_404(err):
             return send_from_directory(str(FRONTEND_BUILD_DIR), "index.html")
     return jsonify({
         "ok": True,
-        "message": "AutoLearn AI Backend API is running.",
+        "message": "AIFORGE Backend API is running.",
         "frontend": "http://localhost:3000",
         "api_status": "/api/status",
         "database": "AIEDUCATION",
@@ -1326,7 +1354,7 @@ def serve_spa(path):
             
     return jsonify({
         "ok": True,
-        "message": "AutoLearn AI Backend API is running.",
+        "message": "AIFORGE Backend API is running.",
         "frontend": "http://localhost:3000",
         "api_status": "/api/status",
         "database": "AIEDUCATION",

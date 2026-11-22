@@ -74,7 +74,7 @@ export default function DSAPage() {
             <span className="text-xs font-mono text-slate-400">19 Topic Modules · 200+ Curated Problems</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-display font-bold text-white mt-2 flex items-center gap-3">
-            <Code className="text-cyan-400" /> AutoLearn DSA Roadmap & Practice
+            <Code className="text-cyan-400" /> AIFORGE DSA Roadmap & Practice
           </h1>
           <p className="text-slate-400 text-sm mt-1 max-w-2xl">
             Master Data Structures & Algorithms with an adaptive engine that adjusts difficulty according to your mastery, identifies mistake patterns, and accelerates interview prep.

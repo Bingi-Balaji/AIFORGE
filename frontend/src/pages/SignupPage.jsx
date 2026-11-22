@@ -58,7 +58,7 @@ export default function SignupPage() {
             <Brain size={30} className="animate-pulse" />
           </div>
           <h1 className="text-3xl font-display font-bold text-white tracking-tight">
-            Create Your <span className="neon-text-blue">AutoLearn</span> Account
+            Create Your <span className="neon-text-blue">AIFORGE</span> Account
           </h1>
           <p className="text-slate-400 text-sm">
             Join the adaptive AI learning platform.
@@ -193,7 +193,7 @@ export default function SignupPage() {
         <p className="text-center text-xs text-slate-400">
           Already have an account?{' '}
           <Link to="/login" className="text-cyan-400 hover:text-cyan-300 font-semibold underline underline-offset-4">
-            Sign In to AutoLearn
+            Sign In to AIFORGE
           </Link>
         </p>
       </div>

@@ -1,4 +1,4 @@
-// AutoLearn AI - Dynamic Interview Service
+// AIFORGE - Dynamic Interview Service
 // Provides dynamic goal-aware question banks, progressive hints, AI response evaluation,
 // coding execution simulation, interview readiness tracking, and mock interview stages.
 
@@ -1600,16 +1600,16 @@ def calculate_distance(point_a: list[float], point_b: list[float], metric: str =
 };
 
 // Storage helper for selected goal
-const GOAL_STORAGE_KEY = 'autolearn_selected_goal';
-const INTERVIEW_HISTORY_KEY = 'autolearn_interview_history';
+const GOAL_STORAGE_KEY = 'aiforge_selected_goal';
+const INTERVIEW_HISTORY_KEY = 'aiforge_interview_history';
 
 export function getSelectedGoal() {
   try {
-    const saved = localStorage.getItem(GOAL_STORAGE_KEY);
+    const saved = localStorage.getItem(GOAL_STORAGE_KEY) || localStorage.getItem('autolearn_selected_goal');
     if (saved && INTERVIEW_GOALS[saved]) {
       return saved;
     }
-  } catch {}
+  } catch { }
   return 'placement';
 }
 
@@ -1621,7 +1621,7 @@ export function setSelectedGoal(goalId) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ goal: goalId })
-      }).catch(() => {});
+      }).catch(() => { });
     }
   } catch (err) {
     console.warn('Could not save goal', err);
@@ -1646,7 +1646,7 @@ export function getInterviewQuestionsForGoal(goalId, filterDifficulty = 'all', f
 export function getInterviewQuestionsForTopic(topicName, goalId, filterDifficulty = 'all', filterType = 'all') {
   if (!topicName) return getInterviewQuestionsForGoal(goalId, filterDifficulty, filterType);
   const cleanTopic = topicName.trim().toLowerCase();
-  
+
   // 1. Check direct topic catalog matches
   let matched = [];
   const catalogKeys = Object.keys(TOPIC_QUESTIONS_MAP);
@@ -1690,7 +1690,7 @@ export function getInterviewQuestionsForTopic(topicName, goalId, filterDifficult
 
   // 3. Fallback to topic-tailored synthesis that creates diverse questions without generic repetitive templates
   const fnName = `solve_${cleanTopic.replace(/[^a-z0-9]/g, '_')}`;
-  
+
   let synthesized = [];
   if (filterType === 'coding') {
     synthesized = [
@@ -1879,7 +1879,7 @@ export function evaluateUserAnswer({ question, userAnswer }) {
     score,
     verdict,
     isSatisfactory: score >= 60,
-    feedback: score >= 80 
+    feedback: score >= 80
       ? 'Excellent articulation of core concepts and trade-offs. Your answer demonstrates strong technical terminology and clear structure.'
       : 'You covered the foundational idea, but missed a few crucial technical subtleties. Review the missing key points below.',
     matchedKeyPoints: matchedPoints,
@@ -2018,7 +2018,7 @@ export async function saveInterviewSession(sessionData) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(sessionData)
-    }).catch(() => {});
+    }).catch(() => { });
   } catch (err) {
     console.warn('Could not save interview session', err);
   }

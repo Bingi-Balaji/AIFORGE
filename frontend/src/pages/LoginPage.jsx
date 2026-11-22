@@ -46,7 +46,7 @@ export default function LoginPage() {
             <Brain size={30} className="animate-pulse" />
           </div>
           <h1 className="text-3xl font-display font-bold text-white tracking-tight">
-            Welcome Back to <span className="neon-text-blue">AutoLearn</span>
+            Welcome Back to <span className="neon-text-blue">AIFORGE</span>
           </h1>
           <p className="text-slate-400 text-sm">
             Sign in to access your adaptive ML learning paths, quizzes & interviews.

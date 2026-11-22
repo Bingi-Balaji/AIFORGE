@@ -120,18 +120,18 @@ const difficultyColor = {
 
 export default function GoalSelectionPage() {
   const [selected, setSelected] = useState(() => {
-    return localStorage.getItem('autolearn_selected_goal') || 'placement';
+    return localStorage.getItem('aiforge_selected_goal') || localStorage.getItem('autolearn_selected_goal') || 'placement';
   });
   const navigate = useNavigate();
 
   const handleSelectGoal = (goalId) => {
     setSelected(goalId);
-    localStorage.setItem('autolearn_selected_goal', goalId);
+    localStorage.setItem('aiforge_selected_goal', goalId);
   };
 
   const handleContinue = () => {
     if (selected) {
-      localStorage.setItem('autolearn_selected_goal', selected);
+      localStorage.setItem('aiforge_selected_goal', selected);
       navigate('/start', { state: { goal: selected } });
     }
   };
@@ -222,7 +222,7 @@ export default function GoalSelectionPage() {
                         onClick={(e) => {
                           e.stopPropagation();
                           try {
-                            localStorage.setItem('autolearn_selected_goal', goal.id);
+                            localStorage.setItem('aiforge_selected_goal', goal.id);
                           } catch {}
                           navigate(`/interview?goal=${goal.id}&topic=${encodeURIComponent(t)}`);
                         }}
@@ -267,7 +267,7 @@ export default function GoalSelectionPage() {
               type="button"
               onClick={() => {
                 try {
-                  localStorage.setItem('autolearn_selected_goal', selected);
+                  localStorage.setItem('aiforge_selected_goal', selected);
                 } catch {}
                 navigate(`/interview?goal=${selected}`);
               }}

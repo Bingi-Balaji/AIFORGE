@@ -1026,7 +1026,7 @@ def _local_reasoned_answer(question: str, detected_topic: str) -> str:
     # 1. GREETINGS
     if any(q.startswith(g) for g in ['hi', 'hello', 'hey', 'greetings', 'who are you', 'what can you do', 'help me']):
         return (
-            f"### 👋 Hello! I am your AutoLearn AI Voice Tutor\n\n"
+            f"### 👋 Hello! I am your AIFORGE Voice Tutor\n\n"
             f"I provide exact, accurate answers for all topics in **Artificial Intelligence**, **Machine Learning**, **Deep Learning**, and **Python**.\n\n"
             f"#### 💡 Example Questions You Can Ask:\n"
             f"- *\"What is overfitting and how do I prevent it?\"*\n"

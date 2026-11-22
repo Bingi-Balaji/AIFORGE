@@ -11,7 +11,7 @@ export default function StudyPlannerPage() {
   const [selectedDuration, setSelectedDuration] = useState('1hr'); // '30min' | '1hr' | '2hr' | '3hr'
   const [profile, setProfile] = useState(getLearnerProfile());
   const [completedTasks, setCompletedTasks] = useState(new Set());
-  
+
   // Spaced Repetition State
   const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
@@ -59,7 +59,7 @@ export default function StudyPlannerPage() {
             <Clock className="text-cyan-400" /> Daily Study Planner & Spaced Revision
           </h1>
           <p className="text-slate-400 text-sm mt-1 max-w-2xl">
-            Choose how much time you have today. AutoLearn constructs an optimized, scientifically sequenced study sprint balancing concept review, diagnostic quizzes, and spaced retention.
+            Choose how much time you have today. AIFORGE constructs an optimized, scientifically sequenced study sprint balancing concept review, diagnostic quizzes, and spaced retention.
           </p>
         </div>
 
@@ -71,11 +71,10 @@ export default function StudyPlannerPage() {
                 setSelectedDuration(dur);
                 setCompletedTasks(new Set());
               }}
-              className={`px-3.5 py-2 rounded-xl font-mono text-xs transition ${
-                selectedDuration === dur
+              className={`px-3.5 py-2 rounded-xl font-mono text-xs transition ${selectedDuration === dur
                   ? 'btn-cyber-primary font-bold shadow-lg shadow-cyan-900/30'
                   : 'glass-card text-slate-400 hover:text-white'
-              }`}
+                }`}
             >
               {dur === '30min' ? '30 Min' : dur === '1hr' ? '1 Hour' : dur === '2hr' ? '2 Hours' : '3+ Hours'}
             </button>
@@ -99,7 +98,7 @@ export default function StudyPlannerPage() {
           </div>
 
           <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-            <div 
+            <div
               className="bg-gradient-to-r from-cyan-400 to-purple-500 h-full transition-all duration-300"
               style={{ width: `${(completedTasks.size / plan.agenda.length) * 100}%` }}
             />
@@ -112,20 +111,18 @@ export default function StudyPlannerPage() {
               const isCompleted = completedTasks.has(idx);
 
               return (
-                <div 
+                <div
                   key={idx}
-                  className={`p-4 rounded-xl border transition-all flex items-center justify-between gap-4 ${
-                    isCompleted 
-                      ? 'bg-emerald-950/20 border-emerald-500/30 opacity-75' 
+                  className={`p-4 rounded-xl border transition-all flex items-center justify-between gap-4 ${isCompleted
+                      ? 'bg-emerald-950/20 border-emerald-500/30 opacity-75'
                       : 'bg-white/5 border-white/10 hover:border-cyan-500/30'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-3">
                     <button
                       onClick={() => toggleTask(idx)}
-                      className={`w-6 h-6 rounded-lg flex items-center justify-center border transition ${
-                        isCompleted ? 'bg-emerald-500 border-emerald-400 text-black font-bold' : 'border-slate-600 hover:border-cyan-400'
-                      }`}
+                      className={`w-6 h-6 rounded-lg flex items-center justify-center border transition ${isCompleted ? 'bg-emerald-500 border-emerald-400 text-black font-bold' : 'border-slate-600 hover:border-cyan-400'
+                        }`}
                     >
                       {isCompleted && <CheckCircle2 size={16} />}
                     </button>
@@ -209,25 +206,25 @@ export default function StudyPlannerPage() {
                         onClick={() => handleRateCard('again')}
                         className="p-2 rounded-lg bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 text-xs font-mono text-center border border-rose-500/30"
                       >
-                        Again<br/><span className="text-[10px] text-slate-400">&lt; 1 day</span>
+                        Again<br /><span className="text-[10px] text-slate-400">&lt; 1 day</span>
                       </button>
                       <button
                         onClick={() => handleRateCard('hard')}
                         className="p-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-xs font-mono text-center border border-amber-500/30"
                       >
-                        Hard<br/><span className="text-[10px] text-slate-400">2 days</span>
+                        Hard<br /><span className="text-[10px] text-slate-400">2 days</span>
                       </button>
                       <button
                         onClick={() => handleRateCard('good')}
                         className="p-2 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 text-xs font-mono text-center border border-cyan-500/30"
                       >
-                        Good<br/><span className="text-[10px] text-slate-400">4 days</span>
+                        Good<br /><span className="text-[10px] text-slate-400">4 days</span>
                       </button>
                       <button
                         onClick={() => handleRateCard('easy')}
                         className="p-2 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 text-xs font-mono text-center border border-emerald-500/30"
                       >
-                        Easy<br/><span className="text-[10px] text-slate-400">7 days</span>
+                        Easy<br /><span className="text-[10px] text-slate-400">7 days</span>
                       </button>
                     </div>
                   </div>

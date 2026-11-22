@@ -129,7 +129,7 @@ Top-Down (Memoization) uses recursion with caching, whereas Bottom-Up (Tabulatio
             <Sparkles className="text-purple-400" /> Syllabus & Study Material Parser
           </h1>
           <p className="text-slate-400 text-sm mt-1 max-w-2xl">
-            Paste your university syllabus, exam curriculum, or legal study notes. AutoLearn extracts topic hierarchies, detects prerequisites, and generates instant flashcards, learning paths, and quizzes.
+            Paste your university syllabus, exam curriculum, or legal study notes. AIFORGE extracts topic hierarchies, detects prerequisites, and generates instant flashcards, learning paths, and quizzes.
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-// AutoLearn AI - DSA Knowledge & Problem Dataset Service
+// AIFORGE - DSA Knowledge & Problem Dataset Service
 // Covers 19 comprehensive topic modules, problem-solving patterns, and multi-language support (Java primary, Python, C++)
 
 export const DSA_TOPICS = [

@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { apiFetch } from '../utils/api';
 
 const AuthContext = createContext(null);
-const USER_STORAGE_KEY = 'autolearn_auth_user';
+const USER_STORAGE_KEY = 'aiforge_auth_user';
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);

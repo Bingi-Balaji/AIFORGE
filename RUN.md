@@ -1,4 +1,4 @@
-# How to Run SmartLearn AI
+# How to Run AIFORGE
 
 Everything (Python virtual environment, Node.js runtime, and all dependencies) is configured and ready to run inside this project folder.
 
@@ -6,7 +6,7 @@ Everything (Python virtual environment, Node.js runtime, and all dependencies) i
 
 ## Option 1: One-Command Run (Recommended)
 
-Open your terminal in this project directory (`SmartLearn-AI-main`) and run:
+Open your terminal in this project directory (`AIFORGE`) and run:
 
 ### Fullstack Production Mode (Port 5000)
 Runs the integrated Flask server serving both backend APIs and the compiled React frontend:

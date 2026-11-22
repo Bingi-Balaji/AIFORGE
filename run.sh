@@ -46,7 +46,7 @@ case "$1" in
     ;;
   *)
     free_port 5000
-    echo "Starting SmartLearn AI Fullstack Application on http://localhost:5000..."
+    echo "Starting AIFORGE Fullstack Application on http://localhost:5000..."
     python "$DIR/app.py"
     ;;
 esac

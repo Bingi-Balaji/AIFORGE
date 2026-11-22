@@ -44,7 +44,7 @@ export default function InterviewPage() {
   // Bookmarks State
   const [bookmarkedIds, setBookmarkedIds] = useState(() => {
     try {
-      const saved = localStorage.getItem('autolearn_bookmarked_questions');
+      const saved = localStorage.getItem('aiforge_bookmarked_questions') || localStorage.getItem('autolearn_bookmarked_questions');
       return saved ? new Set(JSON.parse(saved)) : new Set();
     } catch {
       return new Set();
@@ -108,7 +108,7 @@ export default function InterviewPage() {
         next.add(id);
       }
       try {
-        localStorage.setItem('autolearn_bookmarked_questions', JSON.stringify(Array.from(next)));
+        localStorage.setItem('aiforge_bookmarked_questions', JSON.stringify(Array.from(next)));
       } catch {}
       return next;
     });
